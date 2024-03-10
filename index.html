@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Webpage Portfolio</title>
+    <!--CSS Stylesheet-->
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+
+    <!--Font Style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--Navigation-->
+    <nav>
+      <ul class="navigation">
+        <li>
+          <a href="./index.html">About Me</a>
+        </li>
+        <li>
+          <a href="./projects.html">Projects</a>
+        </li>
+        <li>
+          <a href="./skills.html">Skills</a>
+        </li>
+        <li>
+          <a href="./contact.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+    <!--About Me Section-->
+
+    <div class="about-me-container">
+      <img src="./Pictures/IMG_0181.jpg" />
+
+      <div class="about-me-description">
+        <p>Aspiring Full Stack Software Developer</p>
+        <h1>Sachiko Ponpon</h1>
+        <h4>
+          I genuinely like learning and challenging myself for self-improvement.
+          My creativity comes from music, literature, and fashion. Eventually, I
+          want to dive in technology and create websites. I work as a Business
+          Sales in Education throughout the day and study web development at
+          night.
+        </h4>
+        <p>
+          I've been programming for <span id="time-container">0</span> seconds!
+        </p>
+      </div>
+    </div>
+
+    <!--Footer-->
+    <footer>
+      <p>Sachiko Ponpon</p>
+      <p>&copy: 2024</p>
+    </footer>
+  </body>
+
+  <script>
+    const timeContainer = document.getElementById("time-container");
+    const BIRTH_DAY = "11-23-1996";
+    const BIRTH_DAY_DATE = new Date(BIRTH_DAY);
+    const intlNumberFormatter = new Intl.NumberFormat("en-US");
+
+    setInterval(() => {
+      const now = new Date();
+      const difference = Math.floor(
+        (now.getTime() - BIRTH_DAY_DATE.getTime()) / 1000
+      );
+
+      timeContainer.innerText = intlNumberFormatter.format(difference);
+    }, 1000);
+  </script>
+</html>
